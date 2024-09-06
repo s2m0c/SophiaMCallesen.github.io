@@ -1,0 +1,1047 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Work - Sophia M Callesen Portfolio</title>
+    <style>
+        body {
+            font-family: Cambria, serif;
+            margin: 0;
+            padding: 0;
+            position: relative;
+            background-color: rgb(41, 41, 41);
+            color: rgb(63, 196, 216);
+            text-align: center;  /* Center align all content */
+        }
+        
+        /* Menu Bar */
+        .menu-bar {
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+            background-color: rgb(41, 41, 41);
+            padding: 35px 20px;
+            position: fixed;
+            width: 100%; 
+            z-index: 11; 
+            top: 0; 
+        }
+        .category {
+            position: relative;
+            cursor: pointer;
+            color: rgb(255, 255, 255);
+            padding: 10px;
+        }
+        .category:hover .dropdown-content {
+            display: block;
+        }
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background-color: rgb(70, 70, 70);
+            box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+            z-index: 11;
+        }
+        .subcategory {
+            color: rgb(255, 255, 255);
+            padding: 10px 20px;
+            text-align: left;
+        }
+        .subcategory:hover {
+            background-color: #d5d2d2;
+        }
+        .contact-button {
+            font-family: Cambria, serif;
+            background-color: rgb(63, 196, 216);
+            color: rgb(255, 255, 255);
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+            margin-left: 10px;
+            margin-right: 35px;
+        }
+        .horizontal-line {
+            border-top: 2px solid rgb(192, 191, 191);
+            border-bottom: 2px solid rgb(192, 191, 191);
+            width: 0%;
+            position: absolute;
+            z-index: -1;
+        }
+        .horizontal-line.bottom {
+            top: 60%;
+        
+        }
+
+        /* Socials */
+        .button-container {
+            position: fixed;
+            top: 0;
+            left: 15px;
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            height: 50px;
+            background-color: rgb(41, 41, 41);
+            z-index: 11;
+        }
+        .button {
+            width: 35px;
+            height: 35px;
+            background-size: cover;
+            margin-top: 50px;
+            margin-right: 10px;
+        }
+        .button1 {
+            background-image: url('/Users/sophiacallesen/Downloads/Portfolio Website/Images/Apps/1-removebg-preview.png');
+        }
+
+        .button2 {
+            background-image: url('/Users/sophiacallesen/Downloads/Portfolio Website/Images/Apps/2-removebg-preview.png');
+        }
+
+        .button3 {
+            background-image: url('/Users/sophiacallesen/Downloads/Portfolio Website/Images/Apps/Screenshot 2024-08-18 at 05,19,51_processed.png');
+        }
+
+        .button4 {
+            background-image: url('/Users/sophiacallesen/Downloads/Portfolio Website/Images/Apps/Screenshot 2024-08-18 at 05,29,00_processed.png');
+        }
+
+        /* Top Image */
+        .image-container {
+            text-align: center;
+            position: relative;
+            max-width: 100%;
+            overflow: hidden;
+            margin: 0;
+            background-color: rgb(41, 41, 41);
+            
+        }
+        .image-container img {
+            width: 100vw;
+            height: 700px;
+            border-left: 0;
+            border-right: 0;
+            
+        }
+
+        /* Section Headers */
+        .my-work {
+            color: rgb(63, 196, 216);
+            padding: 55px 0;  /* Add padding on the top and bottom of "Art" */
+            font-size: 55px;
+        }
+
+        #coding {
+            color: rgb(63, 196, 216);
+            text-align: left;  /* Align the 'Education' content to the left */
+            padding-left: 20px;  /* Add padding to the left side */
+            margin-right: 100px;
+            margin-left: 100px;   /* Add margin to the left side */
+            font-size: 25px;
+        }
+        .video-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            padding-left: 150px;
+            padding-right: 150px;
+        }
+        .video-container .row {
+            display: flex;
+            margin: 10px 0; /* Adjust margin between rows */
+            margin-left: 125px;
+        }
+        .video {
+            display: flex;
+            flex-flow: column;
+            align-items: center;
+            margin: 10px;
+        }
+        .coding-image {
+            display: flex;
+            flex-flow: column;
+            align-items: center;
+            margin: 10px;
+        }
+        h3 {
+            color: white;
+            font-size: 25px;
+            text-align: center;
+            margin: 5px 0;
+        }
+
+        #rectilinear {
+            color: rgb(63, 196, 216);
+            text-align: left;  /* Align the 'Education' content to the left */
+            padding-left: 20px;  /* Add padding to the left side */
+            margin-right: 100px;
+            margin-left: 100px;   /* Add margin to the left side */
+            font-size: 25px;
+        }
+        .rect-video-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            padding-left: 150px;
+            padding-right: 150px;
+            margin-left: -140px;
+            width: 100%;
+        }
+
+        .rect-video {
+            display: flex;
+            flex-flow: column;
+            align-items: center;
+            margin: 10px;
+        }
+
+        .rect-video h3 {
+            color: white;
+            text-align: center;
+            margin: 5px 0;
+        }
+
+        #vr {
+            color: rgb(63, 196, 216);
+            text-align: left;  /* Align the 'Education' content to the left */
+            padding-left: 20px;  /* Add padding to the left side */
+            margin-right: 100px;
+            margin-left: 100px;   /* Add margin to the left side */
+            font-size: 25px;
+        }
+        .vr-image-container {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-top: 20px;
+        }
+        .vr-image-container .row {
+            display: flex;
+            margin: 10px 0; /* Adjust margin between rows */
+        }
+        .vr-image-container .column {
+            flex: 1;
+            margin: 0 10px; /* Adjust margin for each column */
+        }
+        .vr-image-container .column h3 {
+            color: rgb(255, 255, 255);
+            font-size: 25px;
+        }
+        .vr-image-container .column img {
+            width: 100%;
+            height: auto;
+            display: block;
+            border: 2px solid #333;
+            margin-bottom: 10px; /* Adjust margin between images */
+        }
+        .vr-image-container .column h4 {
+            color: rgb(255, 255, 255);
+            text-align: center;
+            font-size: 21px;
+        }
+        .vr1-video-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+        }
+
+        .vr1-video {
+            display: flex;
+            flex-flow: column;
+            align-items: center;
+            margin: 10px;
+        }
+        .vr1-video-container h3 {
+            color: white;
+            text-align: center;
+            margin: 5px 0;
+        }
+        .image-container-vr {
+            display: flex;
+            justify-content: space-around;
+            margin-top: 5px;
+        }
+
+        .image-container-vr a {
+            width: 200px; /* Adjust the size of the square containers here */
+            height: 200px; /* Adjust the size of the square containers here */
+            display: inline-block;
+            margin: 0 30px;
+        }
+
+        .image-container-vr img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            cursor: pointer;
+        }
+        .image-container-vr h4{
+            font-size: 23px;
+            color: white;
+            margin-left: -45px;
+        }
+
+        .vr2-video-container {
+            color: white;
+            margin-top: 30px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            margin-right: 200px;
+            margin-left: 200px;
+        }
+        .vr2-video {
+            display: flex;
+            flex-flow: column;
+            align-items: center;
+            margin: 10px;
+        }
+        .vr2-video h3 {
+            color: white;
+            font-size: 25px;
+            margin-left: -545px;
+        }
+        .vr2-video h4 {
+            color: white;
+            font-size: 21px;
+            margin-bottom: 25px;
+        }
+
+        #immersive {
+            color: rgb(63, 196, 216);
+            text-align: left;  /* Align the 'Education' content to the left */
+            padding-left: 20px;  /* Add padding to the left side */
+            margin-right: 100px;
+            margin-left: 100px;   /* Add margin to the left side */
+            font-size: 25px;
+        }
+        .im-video-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            padding-left: 0px;
+            padding-right: 0px;
+            margin-bottom: -100px;
+        }
+        .im-video {
+            display: flex;
+            flex-flow: column;
+            align-items: center;
+            margin: 0px;
+        }
+        .im-video-container .im-video h3 {
+            color: white;
+            font-size: 25px;
+            text-align: left;
+            margin: 5px 0;
+            margin-left: -295px;
+        
+        }
+        .im1-image-container {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-top: 20px;
+            margin-left: 25px;
+            margin-right: 225px;
+        }
+        .im1-image-container .row {
+            display: flex;
+            margin: 10px 0; /* Adjust margin between rows */
+        }
+        .im1-image-container .column {
+            flex: 1;
+            margin: 0 50px; /* Adjust margin for each column */
+        }
+        .im1-image-container .column h3 {
+            color: rgb(255, 255, 255);
+            font-size: 12px;
+        }
+        .im1-image-container .column img {
+            width: 100%;
+            height: auto;
+            display: block;
+            border: 2px solid #333;
+            margin-left: 100px;
+            margin-right: 100px;
+            margin-bottom: 0px; /* Adjust margin between images */
+        }
+        .im1-image-container .column h4 {
+            color: rgb(255, 255, 255);
+            text-align: center;
+        }
+        #websites {
+            color: rgb(63, 196, 216);
+            text-align: left;  /* Align the 'Education' content to the left */
+            padding-left: 20px;  /* Add padding to the left side */
+            margin-right: 100px;
+            margin-left: 100px;   /* Add margin to the left side */
+            font-size: 25px;
+        }
+        .image-container-1 {
+            display: flex;
+            justify-content: space-around;
+            margin-top: 0px;
+        }
+        .image-container-1 a {
+            width: 200px; /* Adjust the size of the square containers here */
+            height: 200px; /* Adjust the size of the square containers here */
+            display: inline-block;
+            margin: 0 10px;
+        }
+        .image-container-1 img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            cursor: pointer;
+        }
+        .image-container-1 p {
+            color: rgb(255, 255, 255);
+            text-align: center;
+            font-size: 19px;
+            margin-top: 5px;
+            margin-bottom: 17px;
+        }
+
+        .im2-image-container {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-top: 20px;
+            margin-left: 150px;
+            margin-right: 150px;
+        }
+        .im2-image-container .row {
+            display: flex;
+            margin: 10px 0; /* Adjust margin between rows */
+        }
+        .im2-image-container .column {
+            flex: 1;
+            margin: 0 10px; /* Adjust margin for each column */
+        }
+        .im2-image-container .column h3 {
+            color: rgb(255, 255, 255);
+            font-size: 25px;
+            margin-left: -475px;
+            margin-bottom: 55px;
+        }
+        .im2-image-container .column img {
+            width: 75%;
+            height: auto;
+            display: block;
+            border: 2px solid #333;
+            margin-left: 100px;
+            margin-right: 100px;
+            margin-bottom: 10px; /* Adjust margin between images */
+        }
+        .im2-video-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            padding-left: 150px;
+            padding-right: 150px;
+            margin-top: -20px;
+            margin-left: 73px;
+        }
+        .im2-video {
+            display: flex;
+            flex-flow: column;
+            align-items: center;
+            margin: 0px;
+        }
+
+        #unreal {
+            color: rgb(63, 196, 216);
+            text-align: left;  /* Align the 'Education' content to the left */
+            padding-left: 20px;  /* Add padding to the left side */
+            margin-right: 100px;
+            margin-left: 100px;   /* Add margin to the left side */
+            font-size: 25px;
+        }
+        .un-video-container {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .un-video-box {
+            width: 30%; /* Each video box takes 30% of the screen width */
+            padding: 25px;
+        }
+        .un-video-container h3{
+            color: white;
+            font-size: 25px;
+            margin-top: 3px;
+            margin-bottom: 47px;
+            margin-left: -7px;
+        }
+        .un-video-container .un-video-box h4 {
+            color: white;
+            font-size: 23px;
+            text-align: center;
+        }
+        .un-image-container {
+            display: flex;
+            margin-top: 87px;
+        }
+
+        .un-image-container h3 {
+            color: white;
+            font-size: 25px;
+            margin-left: 11px;
+            margin-bottom: -13px;
+        }
+        .un-image-container h4 {
+            color: white;
+            font-size: 23px;
+            text-align: center;
+            margin-left: -105px;
+        }
+        .un-box {
+            width: 50%;
+            padding: 10px;
+        }
+
+        .un-box img {
+            width: auto;
+            max-width: 1700px; /* Adjust the maximum width of the image */
+            height: auto;
+            max-height: 340px;
+        }
+
+        .un-box video {
+            width: 100%;
+            height: auto;
+        }
+
+        .un-center-container {
+            text-align: center;
+            margin-top: 97px;
+        }
+        .un-center-container h3 {
+            text-align: left;
+            font-size: 25px;
+            margin-left: 11px;
+            margin-bottom: -15px;
+        }
+        .un-center-container h4 {
+            text-align: center;
+            color: rgb(255, 255, 255);
+            font-size: 23px;
+        }
+
+        .un-pdf-container {
+            width: 800px;
+            overflow: auto;
+            margin: 0 auto;
+        }
+
+
+        #audio {
+            color: rgb(63, 196, 216);
+            text-align: left;  /* Align the 'Education' content to the left */
+            padding-left: 20px;  /* Add padding to the left side */
+            margin-right: 100px;
+            margin-left: 100px;   /* Add margin to the left side */
+            font-size: 25px;
+        }
+        .aud-video-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            padding-left: 0px;
+            padding-right: 0px;
+            margin-left: -5px;
+            margin-bottom: -100px;
+        }
+        .aud-video {
+            display: flex;
+            flex-flow: column;
+            align-items: center;
+            margin: 0px;
+        }
+        .aud-video-container .aud-video h3 {
+            color: white;
+            font-size: 25px;
+            text-align: left;
+            margin: 1px 0;
+            margin-left: 0px;
+            margin-bottom: 13px;
+        }
+        .aud-button-container {
+            display: flex;
+            justify-content: space-around;
+            margin-top: 50px;
+            margin-left: 150px;
+            margin-right: 150px;
+            margin-bottom: 60px;
+        }
+
+        .audio-button {
+            width: 175px;
+            height: 175px;
+            background-image: url('/Users/sophiacallesen/Downloads/Portfolio Website/Images/To Unreal/Audio/Audio Button.png');
+            background-size: cover;
+            color: white;
+        }
+
+        .button-with-text {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .button-with-text h3 {
+            margin-top: -5px; /* Adjust margin for better alignment */
+            margin-bottom: 30px;
+        }
+        #note{
+            text-align: center;
+            color: white;
+            font-size: 25px;
+            padding-top: 50px;
+            padding-bottom: 150px;
+        }
+
+        /* Footer */
+        footer {
+            background-color: rgb(41, 41, 41);
+            color: rgb(63, 196, 216);
+            border-top: 1px solid rgb(70, 70, 70);
+            text-align: center;
+            padding: 35px 20px;
+            font-family: Cambria, serif;
+        }
+        footer::after {
+            content: "";
+            display: block;
+            width: 100%;
+            height: 2px;
+            background-color: rgb(41, 41, 41);
+        }
+    </style>
+</head>
+<body>
+    <!-- Menu Bar -->
+    <header>
+        <div class="menu-bar">
+            <div class="category" onclick="window.location.href = 'index.html';">Home</div>
+            <div class="category">About
+                <div class="dropdown-content">
+                    <div class="subcategory" onclick="window.location.href = 'about.html#education';">Education</div>
+                    <div class="subcategory" onclick="window.location.href = 'about.html#skills';">Skills</div>
+                    <div class="subcategory" onclick="window.location.href = 'about.html#experience';">Experience</div>
+                    <div class="subcategory" onclick="window.location.href = 'about.html#certificates';">Certificates & Awards</div>
+                    <div class="subcategory" onclick="window.location.href = 'courses.html';">Courses Taken & Training</div>
+                </div>
+            </div>
+            <div class="category">Art
+                <div class="dropdown-content">
+                    <div class="subcategory" onclick="window.location.href = 'art.html#pastels';">Pastels</div>
+                    <div class="subcategory" onclick="window.location.href = 'art.html#sketches';">Sketches</div>
+                    <div class="subcategory" onclick="window.location.href = 'art.html#photography';">Photography</div>
+                </div>
+            </div>
+            <div class="category">Design
+             <div class="dropdown-content">
+                    <div class="subcategory" onclick="window.location.href = 'design.html#websites';">Websites</div>
+                    <div class="subcategory" onclick="window.location.href = 'design.html#drawings';">Drawings & Mock-Ups</div>
+                    <div class="subcategory" onclick="window.location.href = 'design.html#ephemera';">Ephemera Designs</div>
+                    <div class="subcategory" onclick="window.location.href = 'design.html#editing';">Editing & Application</div>
+             </div>
+            </div>
+            <div class="category">Work
+                <div class="dropdown-content">
+                    <div class="subcategory" onclick="window.location.href = 'work.html#coding';">Coding</div>
+                    <div class="subcategory" onclick="window.location.href = 'work.html#rectilinear';">Rectilinear</div>
+                    <div class="subcategory" onclick="window.location.href = 'work.html#vr';">VR</div>
+                    <div class="subcategory" onclick="window.location.href = 'work.html#immersive';">Immersive Experiences</div>
+                    <div class="subcategory" onclick="window.location.href = 'work.html#unreal';">Unreal Engine</div>
+                    <div class="subcategory" onclick="window.location.href = 'work.html#audio';">Audio Engineering</div>
+                </div>
+            </div>
+            <div class="category" onclick="window.location.href = 'acting.html';">Acting</div>
+            <div class="category" onclick="window.location.href = 'air.html';">A.I.R.</div>
+            <button class="contact-button" onclick="window.location.href='mailto:scallesen20@gmail.com'">Contact</button>
+            <div class="horizontal-line"></div>
+            <div class="horizontal-line bottom"></div>
+        </div>
+    <!-- Socials -->
+    <div class="button-container">
+        <a href="mailto:scallesen20@gmail.com" target="_blank" class="button button1"></a>
+        <a href="https://www.youtube.com/@SophiaCallesen" target="_blank" class="button button2"></a>
+        <a href="https://www.instagram.com/sophia_callesen20?igsh=MTYxcDllbTQyenFtNQ%3D%3D&utm_source=qr" target="_blank" class="button button3"></a>
+        <a href="https://www.linkedin.com/in/sophia-callesen-205326218" target="_blank" class="button button4"></a>
+    </div>
+    </header>
+    <!-- Top Image -->
+    <header>
+        <div class="image-container">
+            <img src="/Users/sophiacallesen/Downloads/Portfolio Website/Images/To Unreal/Immersive/Immersive Top Image.png">
+        </div>
+    </header>
+    <!-- Section Headers -->
+    <header>
+        <h1 class="my-work">My Work</h1>
+
+        <!-- C++ & HTML & Python -->
+        <section id="coding">
+            <h2>Coding</h2>
+            <div class="video-container">
+                <div class="row">
+                <div class="video">
+                    <h3>C++</h3>
+                    <video width="300" height="400" controls>
+                        <source src="/Users/sophiacallesen/Downloads/Portfolio Website/Images/To Unreal/Coding/C++.mov" type="video/quicktime">
+                    </video>
+                </div>
+            <div class="video-container">
+                <h3>Python</h3>
+                <div class="video">
+                    <video width="600" height="400" controls>
+                        <source src="/Users/sophiacallesen/Downloads/Portfolio Website/Images/To Unreal/Coding/Python.mov" type="video/quicktime">
+                    </video>
+                </div>
+                </div>
+            </div>
+            </div>
+        </section>
+        </br>
+        </br>
+        </br>
+        </br>
+        <section>
+            <h3>HTML</h3>
+        </br>
+            <div class="video-container">
+                <div class="video">
+                    <video width="300" height="400" controls>
+                        <source src="/Users/sophiacallesen/Downloads/Portfolio Website/Images/To Unreal/Coding/HTML1.mov" type="video/quicktime">
+                    </video>
+                </div>
+                <div class="video">
+                    <video width="300" height="400" controls>
+                        <source src="/Users/sophiacallesen/Downloads/Portfolio Website/Images/To Unreal/Coding/HTML2.mov" type="video/quicktime">
+                    </video>
+                </div>
+                <div class="video">
+                    <video width="300" height="400" controls>
+                        <source src="/Users/sophiacallesen/Downloads/Portfolio Website/Images/To Unreal/Coding/HTML2.mov" type="video/quicktime">
+                    </video>
+                </div>
+                <div class="video">
+                    <video width="300" height="400" controls>
+                        <source src="/Users/sophiacallesen/Downloads/Portfolio Website/Images/To Unreal/Coding/HTML4.mov" type="video/quicktime">
+                    </video>
+                </div>
+                <div class="coding-image">
+                        <img width="300" height="400" src="/Users/sophiacallesen/Downloads/Portfolio Website/Images/To Unreal/Coding/This Portfolio.png" alt="Image-1">
+                    </image>
+                </div>
+            </div>            
+        </section>
+        </br>
+        </br>
+        </br>
+        </br>
+        </br>
+        </br>
+        </br>
+        </br>
+
+        <!-- Real/Fake & Exquisite Corpse -->
+        <section id="rectilinear">
+            <h2>Rectilinear</h2>
+            <div class="rect-video-container">
+                <div class="rect-video">
+                    <h3>Real/Fake Pt.1</h3></br>
+                    <video width="400" height="500" controls>
+                        <source src="/Users/sophiacallesen/Downloads/Portfolio Website/Images/To Unreal/Rect/RF1.mp4" type="video/quicktime">
+                    </video>
+                </div>
+                <div class="rect-video">
+                    <h3>Real/Fake Pt.2</h3></br>
+                    <video width="400" height="500" controls>
+                        <source src="/Users/sophiacallesen/Downloads/Portfolio Website/Images/To Unreal/Rect/RF2.mp4" type="video/quicktime">
+                    </video>
+                </div>
+                <div class="rect-video">
+                    <h3>Exquisite Corpse</h3></br>
+                    <video width="400" height="500" controls>
+                        <source src="/Users/sophiacallesen/Downloads/Portfolio Website/Images/To Unreal/Rect/Exquisite.mp4" type="video/quicktime">
+                    </video>
+                </div>
+            </div>
+        </section>
+        </br>
+        </br>
+        </br>
+        </br>
+        </br>
+        </br>
+        </br>
+        </br>    
+
+        <!-- Auscultation Hallucination & 360 Reframe -->
+        <section id="vr">
+            <h2>Virtual Reality (VR)</h2>
+            <div class="vr-image-container">
+                <div class="row">
+                    <div class="column">
+                        <h3>Auscultation Hallucination:</h3>
+                        <h4>Marketing Materials</h4>
+                        <img src="/Users/sophiacallesen/Downloads/Portfolio Website/Images/To Unreal/VR/AVR3.png" alt="Image 4">
+                    </div>
+                    <div class="column">
+                        <h3></br></br></br></br></h3>
+                        <img src="/Users/sophiacallesen/Downloads/Portfolio Website/Images/To Unreal/VR/AVR4.png" alt="Image 3">
+                    </div>
+                    <div class="column">
+                        <h3></br></br></br></br></h3>
+                        <img src="/Users/sophiacallesen/Downloads/Portfolio Website/Images/To Unreal/VR/AVR2.png" alt="Image 2">
+                    </div>
+                    <div class="column">
+                        <h3></br></br></br></br></h3>
+                        
+                        <img src="/Users/sophiacallesen/Downloads/Portfolio Website/Images/To Unreal/VR/AVR1.png" alt="Image 1">
+                    </div>
+                </div>
+            </div>  
+            <div class="image-container-vr">
+                <div class="row">
+                <h4>Videos</h4>
+                    <a href="https://youtu.be/8yFGwPU0GNo" target="_blank">
+                        <img src="/Users/sophiacallesen/Downloads/Portfolio Website/Images/To Unreal/VR/Annoying Noises.png" alt="Image-1">
+                    </a>
+                    <a href="https://youtu.be/llFp8qeAYGs" target="_blank">
+                        <img src="/Users/sophiacallesen/Downloads/Portfolio Website/Images/To Unreal/VR/Bodily Noises.png" alt="Image-2">
+                    </a>
+                    <a href="https://youtu.be/rUaXYWk4FPY" target="_blank">
+                        <img src="/Users/sophiacallesen/Downloads/Portfolio Website/Images/To Unreal/VR/Motor Functions.png" alt="Image-3">
+                    </a>
+                    <a href="https://youtu.be/BNfG-GqnIrY2" target="_blank">
+                        <img src="/Users/sophiacallesen/Downloads/Portfolio Website/Images/To Unreal/VR/Noises.png" alt="Image-4">
+                    </a>
+                </div>    
+            </div>
+        </section>
+        </br>
+        </br>
+        </br>
+        </br>  
+        <section>
+            <div class="vr2-video-container">
+                <div class="vr2-video">
+                    <h3>360 Reframe:</h3>
+                    <h4>Input</h4>
+                        <iframe width="500" height="315" src="https://www.youtube.com/embed/ApVY7fGVs7Q" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                </div>
+                <div class="vr2-video">
+                    <h3></br></h3>
+                    <h4>Output</h4>
+                    <iframe width="500" height="315" src="https://www.youtube.com/embed/8kti0L1nN8k" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                </div>
+            </div>
+        </section>
+        </br>
+        </br>
+        </br>
+        </br>
+        </br>
+        </br>
+        </br>
+        </br>
+
+        <!-- ERSATZ & Cultural Potluck -->
+        <section id="immersive">
+            <h2>Immersive Exeperiences</h2>
+                <div class="im-video-container">
+                    <div class="im-video">
+                        <h3>ERSATZ:</h3>
+                        <video width="400" height="350" controls>
+                            <source src="/Users/sophiacallesen/Downloads/Portfolio Website/Images/To Unreal/Immersive/I1.mp4" type="video/quicktime">
+                        </video>
+                    </div>
+                    <div class="video">
+                        </br>
+                        <video width="400" height="350" controls>
+                            <source src="/Users/sophiacallesen/Downloads/Portfolio Website/Images/To Unreal/Immersive/I2.mp4" type="video/quicktime">
+                        </video>
+                    </div>
+                    <div class="video">
+                        </br>
+                        <video width="400" height="350" controls>
+                            <source src="/Users/sophiacallesen/Downloads/Portfolio Website/Images/To Unreal/Immersive/I3.MP4" type="video/quicktime">
+                        </video>
+                    </div>
+                </div>
+        </section>
+        </br>
+        </br>
+        </br>
+        </br>
+        <section>
+            <div class="im1-image-container">
+                <div class="row">
+                    <div class="column">
+                        <img src="/Users/sophiacallesen/Downloads/Portfolio Website/Images/To Unreal/Immersive/I4.png" alt="Image 4">
+                    </div>
+                    <div class="column">
+                        <h3></br></h3>
+                        <img src="/Users/sophiacallesen/Downloads/Portfolio Website/Images/To Unreal/Immersive/I5.png" alt="Image 3">
+                    </div>
+                </div>
+            </div>
+        </section>
+        </br>
+        </br>
+        </br>
+        </br>
+        <section id="websites">
+            <div class="image-container-1">
+                <a href="https://scallese.wixsite.com/ersatzglitch" target="_blank">
+                    <img src="/Users/sophiacallesen/Downloads/Portfolio Website/Images/To Unreal/Graphic/ERSATZ.png" alt="Image-1">
+                    <p>(Click Above</br>To Go To</br>Website)</p>
+                </a>
+            </div>
+        </section>
+        </br>
+        </br>
+        </br>
+        </br>
+        </br>
+        </br>
+        </br>
+        </br>
+        <section>
+            <div class="im2-image-container">
+                <div class="row">
+                    <div class="column">
+                        <h3>Cultural Potluck:</h3>
+                        <img src="/Users/sophiacallesen/Downloads/Portfolio Website/Images/To Unreal/Immersive/I7.jpg" alt="Image 4">
+                    </div>
+                    <div class="column">
+                        <h3></br></h3>
+                        <img src="/Users/sophiacallesen/Downloads/Portfolio Website/Images/To Unreal/Immersive/I8.jpg" alt="Image 3">
+                    </div>
+                </div>
+            </div>
+        </section>
+        </br>
+        </br>
+        </br>
+        </br>
+        <section>
+            <div class="im2-video-container">
+                <div class="im2-video">
+                        <iframe width="650" height="425" src="https://www.youtube.com/embed/8v7XBmcC_pE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                </div>
+            </div>
+        </section>
+        </br>
+        </br>
+        </br>
+        </br>
+        </br>
+        </br>
+        </br>
+        </br>
+
+        <!-- Creations & Games & AR Resume -->
+        <section id="unreal">
+            <h2>Unreal Engine</h2>
+                <div class="un-video-container">
+                    <h3>Basic Creations:</h3>
+                    <div class="un-video-box">
+                        <h3></br></h3>
+                        <h4>Beginner</h4>
+                        <video width="100%" height="auto" controls>
+                            <source src="/Users/sophiacallesen/Downloads/Portfolio Website/Images/To Unreal/Unreal Port/Intro.mov" type="video/mp4">
+                        </video>
+                    </div>
+                    <div class="un-video-box">
+                        <h3></br></h3>
+                        <h4>Intermediate</h4>
+                        <video width="100%" height="auto" controls>
+                            <source src="/Users/sophiacallesen/Downloads/Portfolio Website/Images/To Unreal/Unreal Port/Intermediate.mov" type="video/mp4">
+                        </video>
+                    </div>
+                    <div class="un-video-box">
+                        <h3></br></h3>
+                        <h4>Advanced</h4>
+                        <video width="100%" height="auto" controls>
+                            <source src="/Users/sophiacallesen/Downloads/Portfolio Website/Images/To Unreal/Unreal Port/Advanced.mov" type="video/mp4">
+                        </video>
+                    </div>
+                </div>
+                <div class="un-image-container">
+                    <h3>Games:</h3>
+                    <div class="un-box">
+                        <h3></br></h3>
+                        <h4>Tic-Tac-Toe</h4>
+                        <video width="100%" height="auto" controls>
+                            <source src="/Users/sophiacallesen/Downloads/Portfolio Website/Images/To Unreal/Unreal Port/Advanced.mov" type="video/mp4">
+                        </video>
+                    </div>
+                    <div class="un-box">
+                        <h3></br></h3>
+                        <h4>Magic 8 Ball</h4>
+                        <img src="/Users/sophiacallesen/Downloads/Portfolio Website/Images/To Unreal/Unreal Port/8Ball.png" alt="Image Description">
+                    </div>
+                </div>
+                <div class="un-center-container">
+                    <h3>AR Interactive:</h3>
+                    <div class="un-pdf-container">
+                        <h3></br></h3>
+                        <h4> AR Resume</h4>
+                        <object type="application/pdf" data="/Users/sophiacallesen/Downloads/Portfolio Website/Images/To Unreal/Unreal Port/AR Resume.pdf" width="100%" height="475px"></object>
+                    </div>
+                </div> 
+        </section>
+        </br>
+        </br>
+        </br>
+        </br>
+        </br>
+        </br>
+        </br>
+        </br>
+
+        <!-- Loop/Playrate & Podcast & Cartoon -->
+        <section id="audio">
+            <h2>Audio Engineering</h2>
+            <div class="aud-button-container">
+                <div class="button-with-text">
+                    <h3>Loops & Fades</h3>
+                    <button class="audio-button" onclick="playAudio1()"></button>
+                </div>
+                <div class="button-with-text">
+                    <h3>Podcast Audio Edit</h3>
+                    <button class="audio-button" onclick="playAudio2()"></button>
+                </div>
+            </div>
+            <audio id="audio1" src="/Users/sophiacallesen/Downloads/Portfolio Website/Images/To Unreal/Audio/Loops/Fades/Playrate.mp3"></audio>
+            <audio id="audio2" src="/Users/sophiacallesen/Downloads/Portfolio Website/Images/To Unreal/Audio/Podcast_Edit.mp3"></audio>
+            <script src="script.js"></script>    
+                <div class="aud-video-container">
+                    <div class="aud-video">
+                        <h3>Animation Audio</h3>
+                        <video width="560" height="350" controls>
+                            <source src="/Users/sophiacallesen/Downloads/Portfolio Website/Images/To Unreal/Audio/Callesen Week 5 Project 09.20 copy.mp4" type="video/quicktime">
+                        </video>
+                    </div>
+                </div>
+        </section>
+        <section id="note">
+            <h6>(Feel Free to Reach Out for More Samples & Projects!)</h6>
+        </section>
+    </header>
+    <!-- Footer -->
+    <footer>
+        Created By: Sophia Callesen | With Gratitude ❤️</br></br>Feel Free to Reach Out to Collaborate!
+    </footer>
+</body>
+</html>

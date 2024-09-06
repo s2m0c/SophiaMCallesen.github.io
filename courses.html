@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Courses Taken & Training - Sophia M Callesen Portfolio</title>
+    <style>
+        body {
+            font-family: Cambria, serif;
+            margin: 0;
+            padding: 0;
+            position: relative;
+            background-color: rgb(41, 41, 41);
+            color: rgb(63, 196, 216);
+            text-align: center;  /* Center align all content */
+        }
+
+        /* Menu Bar */
+        .menu-bar {
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+            background-color: rgb(41, 41, 41);
+            padding: 35px 20px;
+            position: fixed;
+            width: 100%; 
+            z-index: 11; 
+            top: 0; 
+        }
+        .category {
+            position: relative;
+            cursor: pointer;
+            color: rgb(255, 255, 255);
+            padding: 10px;
+        }
+        .category:hover .dropdown-content {
+            display: block;
+        }
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background-color: rgb(70, 70, 70);
+            box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+            z-index: 11;
+        }
+        .subcategory {
+            color: rgb(255, 255, 255);
+            padding: 10px 20px;
+            text-align: left;
+        }
+        .subcategory:hover {
+            background-color: #d5d2d2;
+        }
+        .contact-button {
+            font-family: Cambria, serif;
+            background-color: rgb(63, 196, 216);
+            color: rgb(255, 255, 255);
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+            margin-left: 10px;
+            margin-right: 35px;
+        }
+        .horizontal-line {
+            border-top: 2px solid rgb(192, 191, 191);
+            border-bottom: 2px solid rgb(192, 191, 191);
+            width: 0%;
+            position: absolute;
+            z-index: -1;
+        }
+        .horizontal-line.bottom {
+            top: 60%;
+        }
+
+        /* Socials */
+        .button-container {
+            position: fixed;
+            top: 0;
+            left: 15px;
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            height: 50px;
+            background-color: rgb(41, 41, 41);
+            z-index: 11;
+        }
+        .button {
+            width: 35px;
+            height: 35px;
+            background-size: cover;
+            margin-top: 50px;
+            margin-right: 10px;
+        }
+        .button1 {
+            background-image: url('/Users/sophiacallesen/Downloads/Portfolio Website/Images/Apps/1-removebg-preview.png');
+        }
+
+        .button2 {
+            background-image: url('/Users/sophiacallesen/Downloads/Portfolio Website/Images/Apps/2-removebg-preview.png');
+        }
+
+        .button3 {
+            background-image: url('/Users/sophiacallesen/Downloads/Portfolio Website/Images/Apps/Screenshot 2024-08-18 at 05,19,51_processed.png');
+        }
+
+        .button4 {
+            background-image: url('/Users/sophiacallesen/Downloads/Portfolio Website/Images/Apps/Screenshot 2024-08-18 at 05,29,00_processed.png');
+        }
+
+        /* Top Image */
+        .image-container {
+            text-align: center;
+            position: relative;
+            max-width: 100%;
+            overflow: hidden;
+            margin: 0;
+            background-color: rgb(41, 41, 41);
+        }
+        .image-container img {
+            width: 100vw;
+            height: 700px;
+            border-left: 0;
+            border-right: 0; 
+        }
+
+        /* Section Headers */
+        .my-courses {
+            color: rgb(63, 196, 216);
+            padding: 55px 0;  /* Add padding on the top and bottom of "About Sophie" */
+            font-size: 55px;
+        }
+
+        #artex {
+            color: rgb(63, 196, 216);
+            text-align: left;  /* Align the 'Education' content to the left */
+            padding-left: 250px;  /* Add padding to the left side */
+            margin-left: 20px;   /* Add margin to the left side */
+            font-size: 19px;
+        }
+        #artex ul {
+            color: rgb(255, 255, 255);
+            text-align: left;  /* Align the 'Education' content to the left */
+            padding-left: 20px;  /* Add padding to the left side */
+            font-size: 19px;
+        }
+        #designex {
+            color: rgb(63, 196, 216);
+            text-align: left;  /* Align the 'Education' content to the left */
+            padding-left: 250px;  /* Add padding to the left side */
+            margin-left: 20px;   /* Add margin to the left side */
+            font-size: 19px;
+        }
+        #designex ul {
+            color: rgb(255, 255, 255);
+            text-align: left;  /* Align the 'Education' content to the left */
+            padding-left: 20px;  /* Add padding to the left side */
+            font-size: 19px;
+        }
+        #codingex {
+            color: rgb(63, 196, 216);
+            text-align: left;  /* Align the 'Education' content to the left */
+            padding-left: 250px;  /* Add padding to the left side */
+            margin-left: 20px;   /* Add margin to the left side */
+            font-size: 19px;
+        }
+        #codingex ul {
+            color: rgb(255, 255, 255);
+            text-align: left;  /* Align the 'Education' content to the left */
+            padding-left: 20px;  /* Add padding to the left side */
+            font-size: 19px;
+        }
+        #experienceex {
+            color: rgb(63, 196, 216);
+            text-align: left;  /* Align the 'Education' content to the left */
+            padding-left: 250px;  /* Add padding to the left side */
+            margin-left: 20px;   /* Add margin to the left side */
+            font-size: 19px;
+        }
+        #experienceex ul {
+            color: rgb(255, 255, 255);
+            text-align: left;  /* Align the 'Education' content to the left */
+            padding-left: 20px;  /* Add padding to the left side */
+            font-size: 19px;
+        }
+        #unrealex {
+            color: rgb(63, 196, 216);
+            text-align: left;  /* Align the 'Education' content to the left */
+            padding-left: 250px;  /* Add padding to the left side */
+            margin-left: 20px;   /* Add margin to the left side */
+            font-size: 19px;
+        }
+        #unrealex ul {
+            color: rgb(255, 255, 255);
+            text-align: left;  /* Align the 'Education' content to the left */
+            padding-left: 20px;  /* Add padding to the left side */
+            font-size: 19px;
+        }
+        #audioex {
+            color: rgb(63, 196, 216);
+            text-align: left;  /* Align the 'Education' content to the left */
+            padding-left: 250px;  /* Add padding to the left side */
+            margin-left: 20px;   /* Add margin to the left side */
+            font-size: 19px;
+        }
+        #audioex ul {
+            color: rgb(255, 255, 255);
+            text-align: left;  /* Align the 'Education' content to the left */
+            padding-left: 20px;  /* Add padding to the left side */
+            font-size: 19px;
+        }
+        #behaviorex {
+            color: rgb(63, 196, 216);
+            text-align: left;  /* Align the 'Education' content to the left */
+            padding-left: 250px;  /* Add padding to the left side */
+            margin-left: 20px;   /* Add margin to the left side */
+            font-size: 19px;
+        }
+        #behaviorex ul {
+            color: rgb(255, 255, 255);
+            text-align: left;  /* Align the 'Education' content to the left */
+            padding-left: 20px;  /* Add padding to the left side */
+            font-size: 19px;
+        }
+        #languageex {
+            color: rgb(63, 196, 216);
+            text-align: left;  /* Align the 'Education' content to the left */
+            padding-left: 250px;  /* Add padding to the left side */
+            margin-left: 20px;   /* Add margin to the left side */
+            font-size: 19px;
+        }
+        #languageex ul {
+            color: rgb(255, 255, 255);
+            text-align: left;  /* Align the 'Education' content to the left */
+            padding-left: 20px;  /* Add padding to the left side */
+            font-size: 19px;
+        }
+        #actingex {
+            color: rgb(63, 196, 216);
+            text-align: left;  /* Align the 'Education' content to the left */
+            padding-left: 250px;  /* Add padding to the left side */
+            margin-left: 20px;   /* Add margin to the left side */
+            font-size: 19px;
+            padding-bottom: 150px;
+        }
+        #actingex ul {
+            color: rgb(255, 255, 255);
+            text-align: left;  /* Align the 'Education' content to the left */
+            padding-left: 20px;  /* Add padding to the left side */
+            font-size: 19px;
+        }
+
+        /* Footer */
+        footer {
+            background-color: rgb(41, 41, 41);
+            color: rgb(63, 196, 216);
+            border-top: 1px solid rgb(70, 70, 70);
+            text-align: center;
+            padding: 35px 20px;
+            font-family: Cambria, serif;
+        }
+        footer::after {
+            content: "";
+            display: block;
+            width: 100%;
+            height: 2px;
+            background-color: rgb(41, 41, 41);
+        }
+    </style>
+</head>
+<body>
+     <!-- Menu Bar -->
+     <header>
+        <div class="menu-bar">
+            <div class="category" onclick="window.location.href = 'index.html';">Home</div>
+            <div class="category">About
+                <div class="dropdown-content">
+                    <div class="subcategory" onclick="window.location.href = 'about.html#education';">Education</div>
+                    <div class="subcategory" onclick="window.location.href = 'about.html#skills';">Skills</div>
+                    <div class="subcategory" onclick="window.location.href = 'about.html#experience';">Experience</div>
+                    <div class="subcategory" onclick="window.location.href = 'about.html#certificates';">Certificates & Awards</div>
+                    <div class="subcategory" onclick="window.location.href = 'courses.html';">Courses Taken & Training</div>
+                </div>
+            </div>
+            <div class="category">Art
+                <div class="dropdown-content">
+                    <div class="subcategory" onclick="window.location.href = 'art.html#pastels';">Pastels</div>
+                    <div class="subcategory" onclick="window.location.href = 'art.html#sketches';">Sketches</div>
+                    <div class="subcategory" onclick="window.location.href = 'art.html#photography';">Photography</div>
+                </div>
+            </div>
+            <div class="category">Design
+             <div class="dropdown-content">
+                    <div class="subcategory" onclick="window.location.href = 'design.html#websites';">Websites</div>
+                    <div class="subcategory" onclick="window.location.href = 'design.html#drawings';">Drawings & Mock-Ups</div>
+                    <div class="subcategory" onclick="window.location.href = 'design.html#ephemera';">Ephemera Designs</div>
+                    <div class="subcategory" onclick="window.location.href = 'design.html#editing';">Editing & Application</div>
+             </div>
+            </div>
+            <div class="category">Work
+                <div class="dropdown-content">
+                    <div class="subcategory" onclick="window.location.href = 'work.html#coding';">Coding</div>
+                    <div class="subcategory" onclick="window.location.href = 'work.html#rectilinear';">Rectilinear</div>
+                    <div class="subcategory" onclick="window.location.href = 'work.html#vr';">VR</div>
+                    <div class="subcategory" onclick="window.location.href = 'work.html#immersive';">Immersive Experiences</div>
+                    <div class="subcategory" onclick="window.location.href = 'work.html#unreal';">Unreal Engine</div>
+                    <div class="subcategory" onclick="window.location.href = 'work.html#audio';">Audio Engineering</div>
+                </div>
+            </div>
+            <div class="category" onclick="window.location.href = 'acting.html';">Acting</div>
+            <div class="category" onclick="window.location.href = 'air.html';">A.I.R.</div>
+            <button class="contact-button" onclick="window.location.href='mailto:scallesen20@gmail.com'">Contact</button>
+            <div class="horizontal-line"></div>
+            <div class="horizontal-line bottom"></div>
+        </div>
+    <!-- Socials -->
+    <div class="button-container">
+        <a href="mailto:scallesen20@gmail.com" target="_blank" class="button button1"></a>
+        <a href="https://www.youtube.com/@SophiaCallesen" target="_blank" class="button button2"></a>
+        <a href="https://www.instagram.com/sophia_callesen20?igsh=MTYxcDllbTQyenFtNQ%3D%3D&utm_source=qr" target="_blank" class="button button3"></a>
+        <a href="https://www.linkedin.com/in/sophia-callesen-205326218" target="_blank" class="button button4"></a>
+    </div>
+    </header>
+    <!-- Top Image -->
+    <header>
+        <div class="image-container">
+            <img src="/Users/sophiacallesen/Downloads/Portfolio Website/Images/To Unreal/Courses/Courses Top Image.jpg">
+        </div>
+    </header>
+    <!-- Section Headers -->
+    <header>
+        <h1 class="my-courses">Courses Taken & Training</h1>
+        <section id="artex">
+            <h2>Art</h2>
+            <ul>
+                <li>Studio Art | Bruce Black</li>
+                <li>Advanced Studio Art | Jennifer Summa</li>
+            </ul>
+        </section>
+        </br>
+        <section id="designex">
+            <h2> Graphic Design & Experience Design</h2>
+            <ul>
+                <li>Design & Composition | William Kirkham</li>
+                <li>Theatre Production I | Danielle Deutchmann</li>
+                <li>Theatre Production II | Danielle Deutchmann</li>
+                <li>Principles of Dramatic Analysis | Karen Jean Martinson</li>
+                <li>African American Theatre | Karen Jean Martinson & Crestcencia Ortiz-Barnett</li>
+                <li>History of Theatre | Kristin Hunt</li>
+                <li>Theatre History & Culture | Mary Stephens</li>
+                <li>Communication & Collaboration | Joya Scott</li>
+                <li>Technical Theatre | Heather (Digger) Feeney</li>
+                <li>Mafia & Film | Jennifer Adams</li>
+                <li>Experimental Theatre & Performance | Lance Gharavi</li>
+                <li>Advanced Stagecraft | Heather (Digger) Feeney</li>
+                <li>Directing | Marissa Barnathan</li>
+                <li>Adobe Creative Cloud (Photoshop, Illustrator, PremierePro, After Effects, Lightroom) | Self-taught & Robert Farid Karimi & Max Bernstein</li>
+            </ul>
+        </section>
+        </br>
+        <section id="codingex">
+            <h2>Coding</h2>
+            <ul>
+                <li>Statistics | Samantha Irwin-Tran</li>
+                <li>C++ | Codecademy</li>
+                <li>Python | Codecademy</li>
+                <li>Python for Design | CMU online free course</li>
+                <li>HTML | Codecademy</li>
+                <li>CSS | Self-taught</li>
+                <li>SQL | Codecademy</li>
+                <li>AI Prompt Engineering | Codecademy</li>
+                <li>Unreal Engine Blueprints | Self-taught</li>
+                <li>Designing Extended Reality Experiences | Shaoyu Su</li>
+            </ul>
+        </section>
+        </br>
+        <section id="experienceex">
+            <h2>Immersive Experiences</h2>
+            <ul>
+                <li>Storytelling | Lance Gharavi</li>
+                <li>Professional Development Seminar | Robert Farid Karimi</li>
+                <li>Interactive Participatory Performance: CollabHouse | Robert Farid Karimi</li>
+                <li>Audio Editing | Daniel Jaquette</li>
+                <li>Making Noise, Making Sound? | Serena Ferrando & Kimberly Marshall</li>
+                <li>Adobe Creative Cloud (Photoshop, Illustrator, PremierePro, After Effects, Lightroom) | Self-taught & Robert Farid Karimi & Max Bernstein</li>
+                <li>Performing in the Virtual | Robert Farid Karimi & Max Bernstein</li>
+                <li>Unreal Engine Blueprints | Self-taught</li>
+                <li>Designing Extended Reality Experiences | Shaoyu Su</li>
+            </ul>
+        </section>
+        </br>
+        <section id="unrealex">
+            <h2>Unreal Engine</h2>
+            <ul>
+                <li>Performing in the Virtual | Robert Farid Karimi & Max Bernstein</li>
+                <li>Unreal Engine Blueprints | Self-taught</li>
+                <li>Designing Extended Reality Experiences | Shaoyu Su</li>
+            </ul>
+        </section>
+        </br>
+        <section id="audioex">
+            <h2>Audio Engineering</h2>
+            <ul>
+                <li>Making Noise, Making Sound? | Serena Ferrando & Kimberly Marshall</li>
+                    <ul>
+                        <li>Ableton</li>
+                        <li>Max MSP</li>
+                    </ul>
+                <li>Audio Editing | Daniel Jaquette</li>
+                    <ul>
+                        <li>REAPER</li>
+                    </ul>
+            </ul>
+        </section>
+        </br>
+        <section id="behaviorex">
+            <h2>Behavior</h2>
+            <ul>
+                <li>Psychology | Robert Short</li>
+                <li>Society & Drugs | Daniel Hruschka</li>
+                <li>Transborder Latin American Migration | Eileen Diaz McConnell</li>
+                <li>Neurobiology | Timothy Balmer</li>
+                <li>Animal Behavior | Kevin McGraw</li>
+                <li>Sociology & Behavioral Ecology | Jennifer Fewell</li>
+            </ul>
+        </section>
+        </br>
+        <section id="languageex">
+            <h2>Language</h2>
+            <ul>
+                <li>Linguistics | Gina Scarpete Walters</li>
+                <li>Elementary Italian I | Sandra Palaich</li>
+                <li>Elementary Italian II | Sandra Palaich</li>
+                <li>Intermediate Italian I | Antonella Dell'Anna</li>
+                <li>Intermediate Italian II | Antonella Dell'Anna</li>
+                <li>Speak Italy: Language, People, Culture | Gina Pietrantoni & Juliann Vitullo</li>
+                <li>Advanced Italian | Gina Pietrantoni & Juliann Vitullo</li>
+                <li>Mediterranean Lifestyle | Chiara Dal Martello</li>
+                <li>Natural Disasters | Chiara Dal Martello</li>
+                <li>Mafia & Film | Jennifer Adams</li>
+                <li>Italian Renaissance Culture | Enrico Minardi</li>
+            </ul>
+        </section>
+        </br>
+        <section id="actingex">
+            <h2>Acting</h2>
+            <ul>
+                <li>Acting I | Robert Farid Karimi</li>
+                <li>Stage Movement | Jeff McMahon</li>
+                <li>Screen Acting | Gene Gansle</li>
+                <li>Rasaboxes | Rachel Bowditch</li>
+                <li>Studio Instruction I - Voice | Carlos Feliciano</li>
+                <li>Studio Instruction II - Voice | Carlos Feliciano</li>
+                <li>Advanced Movement & Stage Combat | David Barker</li>
+            </ul>
+        </section>
+    </header>
+    <!-- Footer -->
+    <footer>
+        Created By: Sophia Callesen | With Gratitude ❤️</br></br>Feel Free to Reach Out to Collaborate!
+    </footer>
+</body>
+</html>
