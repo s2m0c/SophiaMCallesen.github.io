@@ -285,30 +285,27 @@
             border: 2px solid #333;
         }
         
-        .video-container {
-            display: flex;
-            justify-content: center;
-            margin-top: 20px;
+        .video-container-last {
+            position: relative;
+            width: 100%;
+            padding-bottom: 56.25%; /* 16:9 aspect ratio for responsive design */
+            margin-bottom: 20px; /* Add some space below the video */
+            margin-left: 200px;
         }
-
-        .video {
-            flex: 0 1 50%; /* Each video takes up 50% of the width */
-            padding: 5px;
-            box-sizing: border-box; /* Include padding in the width calculation */
-        }
-
-        video {
-            width: 100%; /* Make the video fill the container */
-            display: block; /* Remove any default spacing */
-            border: 2px solid #333; /* Add a border for styling */
-        }
-
-        .video-container .video h3 {
-            color: rgb(255, 255, 255);
-            justify-content: center;
-            margin-left: 265px;
+        .video-container-last h3 {
             font-size: 25px;
+            color: rgb(255, 255, 255);
+            margin-top: 35px;
+            margin-left: 390px;
         }
+        iframe {
+            position: absolute;
+            width: 900px;
+            height: 500px;
+            top: 120px;
+            left: 0;
+        }
+
 
         #note{
             text-align: center;
@@ -515,15 +512,9 @@
                     </div>
                 </div>
             </br>
-            <div class="video-container">
-                <div class="video">
+            <div class="video-container-last">
                     <h3>Animation</h3>
-                    <video controls>
-                        <source src="/Users/sophiacallesen/Downloads/Portfolio Website/Images/To Unreal/Graphic/Animation Graphic.mp4" type="video/mp4">
-                        Your browser does not support the video tag.
-                    </video>
-                </div>
-                </div>
+                        <iframe width="350" height="215" src="https://www.youtube.com/embed/lwfzCoYguYU?si=ZkbK9q6z47Q8JLMO" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
             </div>
         </section>
         <section id="note">
